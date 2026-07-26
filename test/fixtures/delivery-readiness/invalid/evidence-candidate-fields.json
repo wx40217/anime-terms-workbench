@@ -3,11 +3,11 @@
   "records": [
     {
       "source": "作画",
-      "target": [],
+      "target": "待确认",
       "status": "candidate",
-      "rationale": 42,
-      "competitionReview": [],
-      "mismatchRiskReview": "done",
+      "rationale": "",
+      "competitionReview": {},
+      "mismatchRiskReview": {},
       "reviewedAt": "2026-02-30"
     }
   ]

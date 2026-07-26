@@ -293,10 +293,13 @@ test("候选术语允许省略未完成字段但拒绝已填写的畸形字段",
   assert.equal(result.status, 1);
   assert.equal(result.stdout, "");
   assert.deepEqual(result.stderr.trimEnd().split("\n"), [
-    "evidence.records[0] (作画): 定稿译法必须是字符串",
-    "evidence.records[0] (作画): 取舍理由必须是字符串",
-    "evidence.records[0] (作画): 竞争译法审查必须是对象",
-    "evidence.records[0] (作画): 误匹配审查必须是对象",
+    "evidence.records[0] (作画): 定稿译法必须是单一且可直接替换的表达",
+    "evidence.records[0] (作画): 取舍理由必须是非空字符串",
+    "evidence.records[0] (作画): 竞争译法审查的 required 必须是布尔值",
+    "evidence.records[0] (作画): 竞争译法备选列表必须是数组",
+    "evidence.records[0] (作画): 非动漫含义审查必须是非空字符串",
+    "evidence.records[0] (作画): 子串重叠审查必须是非空字符串",
+    "evidence.records[0] (作画): 负面样例审查必须是数组",
     "evidence.records[0] (作画): 复查日期必须是有效的 YYYY-MM-DD 日期",
   ]);
 });
