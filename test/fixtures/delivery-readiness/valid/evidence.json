@@ -41,7 +41,13 @@
     },
     {
       "source": "劇場先行上映",
-      "status": "candidate"
+      "status": "candidate",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "影院先行上映"
+        ]
+      }
     }
   ]
 }

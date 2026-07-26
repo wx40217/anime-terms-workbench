@@ -41,7 +41,7 @@
     },
     {
       "source": "劇場アニメ",
-      "target": "剧场版动画、影院动画",
+      "target": "剧场版动画或影院动画",
       "status": "accepted",
       "japaneseEvidence": [
         {
@@ -79,7 +79,7 @@
     },
     {
       "source": "作画監督",
-      "target": "作画监督，负责统一作画质量",
+      "target": "作画监督和总作画监督",
       "status": "accepted",
       "japaneseEvidence": [
         {
@@ -103,7 +103,7 @@
           "role": "final"
         }
       ],
-      "rationale": "测试夹具：用于验证解释内容会被拒绝。",
+      "rationale": "测试夹具：用于验证无分隔符的并列候选会被拒绝。",
       "competitionReview": {
         "required": false,
         "alternatives": []
@@ -117,7 +117,7 @@
     },
     {
       "source": "撮影監督",
-      "target": "摄影监督（译者注：动画岗位）",
+      "target": "摄影监督（动画中的摄影岗位）",
       "status": "accepted",
       "japaneseEvidence": [
         {
