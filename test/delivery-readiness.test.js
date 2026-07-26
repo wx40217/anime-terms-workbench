@@ -31,7 +31,7 @@ function runDeliveryReadiness(arguments_) {
   );
 }
 
-test("最小合规交付输入通过统一检查命令", () => {
+test("完整已接受术语和不完整候选术语可以通过统一检查命令", () => {
   const result = runDeliveryReadiness([
     "--evidence",
     path.join(validFixture, "evidence.json"),
@@ -124,4 +124,152 @@ test("公共索引输入可以省略", () => {
   assert.equal(result.status, 0);
   assert.equal(result.stdout, "交付就绪检查通过。\n");
   assert.equal(result.stderr, "");
+});
+
+test("统一检查命令拒绝畸形旁证记录并允许不完整候选术语", () => {
+  const evidencePath = path.join(
+    invalidFixture,
+    "evidence-record-structure.json",
+  );
+  const result = runDeliveryReadiness([
+    "--evidence",
+    evidencePath,
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "evidence.records[0]: 旁证记录必须是对象",
+    "evidence.records[1]: 字面源词必须是非空字符串",
+    "evidence.records[1]: 准入状态必须是 candidate 或 accepted",
+  ]);
+});
+
+test("已接受术语必须满足完整旁证准入条件", () => {
+  const evidencePath = path.join(
+    invalidFixture,
+    "evidence-accepted-admission.json",
+  );
+  const result = runDeliveryReadiness([
+    "--evidence",
+    evidencePath,
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "evidence.records[0] (テレビアニメ): 定稿译法必须是非空字符串",
+    "evidence.records[0] (テレビアニメ): 日文含义证据必须至少包含一个定稿来源",
+    "evidence.records[0] (テレビアニメ): 简体中文用法证据必须至少包含一个定稿来源",
+    "evidence.records[0] (テレビアニメ): 取舍理由必须是非空字符串",
+    "evidence.records[0] (テレビアニメ): 竞争译法审查必须是对象",
+    "evidence.records[0] (テレビアニメ): 误匹配审查必须是对象",
+    "evidence.records[0] (テレビアニメ): 复查日期必须是有效的 YYYY-MM-DD 日期",
+  ]);
+});
+
+test("候选术语中已填写的证据项也必须使用统一结构", () => {
+  const evidencePath = path.join(
+    invalidFixture,
+    "evidence-item-structure.json",
+  );
+  const result = runDeliveryReadiness([
+    "--evidence",
+    evidencePath,
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "evidence.records[0] (作画).japaneseEvidence[0]: 标题必须是非空字符串",
+    "evidence.records[0] (作画).japaneseEvidence[0]: 发布机构必须是非空字符串",
+    "evidence.records[0] (作画).japaneseEvidence[0]: 来源类型必须是非空字符串",
+    "evidence.records[0] (作画).japaneseEvidence[0]: 链接或书目引用必须是非空字符串",
+    "evidence.records[0] (作画).japaneseEvidence[0]: 核对日期必须是有效的 YYYY-MM-DD 日期",
+    "evidence.records[0] (作画).japaneseEvidence[0]: 证据摘要必须是非空字符串",
+    "evidence.records[0] (作画).japaneseEvidence[0]: 来源角色必须是 final 或 discovery",
+    "evidence.records[0] (作画).chineseEvidence: 必须是数组",
+  ]);
+});
+
+test("已接受术语不能用形式完整的数据绕过关键准入检查", () => {
+  const evidencePath = path.join(
+    invalidFixture,
+    "evidence-accepted-decisions.json",
+  );
+  const result = runDeliveryReadiness([
+    "--evidence",
+    evidencePath,
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "evidence.records[0] (テレビアニメ): 存在竞争译法时必须记录至少一个备选译法",
+    "evidence.records[0] (テレビアニメ): 存在竞争译法时必须有至少两个不同发布机构的中文定稿来源",
+    "evidence.records[0] (テレビアニメ): 非动漫含义审查必须是非空字符串",
+    "evidence.records[0] (テレビアニメ): 子串重叠审查必须是非空字符串",
+    "evidence.records[0] (テレビアニメ): 负面样例审查必须是数组",
+  ]);
+});
+
+test("定稿译法拒绝占位符、并列候选和非固定括注", () => {
+  const evidencePath = path.join(
+    invalidFixture,
+    "evidence-finalized-targets.json",
+  );
+  const result = runDeliveryReadiness([
+    "--evidence",
+    evidencePath,
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "evidence.records[0] (テレビアニメ): 定稿译法必须是单一且可直接替换的表达",
+    "evidence.records[1] (劇場アニメ): 定稿译法必须是单一且可直接替换的表达",
+    "evidence.records[2] (作画監督): 定稿译法必须是单一且可直接替换的表达",
+  ]);
+});
+
+test("发现线索来源不能伪装成定稿来源", () => {
+  const evidencePath = path.join(
+    invalidFixture,
+    "evidence-discovery-promoted.json",
+  );
+  const result = runDeliveryReadiness([
+    "--evidence",
+    evidencePath,
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "evidence.records[0] (テレビアニメ).japaneseEvidence[0]: search-result 只能声明为 discovery 来源",
+    "evidence.records[0] (テレビアニメ): 日文含义证据必须至少包含一个定稿来源",
+  ]);
 });

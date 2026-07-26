@@ -1,0 +1,24 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "テレビアニメ",
+      "target": " ",
+      "status": "accepted",
+      "japaneseEvidence": [],
+      "chineseEvidence": [
+        {
+          "title": "搜索结果线索",
+          "publisher": "示例搜索引擎",
+          "sourceType": "search-result",
+          "reference": "https://search.example/anime",
+          "checkedAt": "2026-07-26",
+          "summary": "仅用于发现可能的中文译法，不能支持定稿。",
+          "role": "discovery"
+        }
+      ],
+      "rationale": "",
+      "reviewedAt": "2026-02-30"
+    }
+  ]
+}

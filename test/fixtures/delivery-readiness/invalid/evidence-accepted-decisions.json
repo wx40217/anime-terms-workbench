@@ -1,0 +1,43 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "テレビアニメ",
+      "target": "电视动画",
+      "status": "accepted",
+      "japaneseEvidence": [
+        {
+          "title": "电视动画节目资料",
+          "publisher": "日本示例动画协会",
+          "sourceType": "industry-reference",
+          "reference": "https://example.jp/television-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "支持该词在动画行业中指电视播出的动画作品。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "电视动画作品介绍",
+          "publisher": "中国示例动漫媒体",
+          "sourceType": "formal-media",
+          "reference": "https://example.cn/television-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "支持“电视动画”作为简体中文正式动漫语境中的用法。",
+          "role": "final"
+        }
+      ],
+      "rationale": "暂拟在两个候选译法中选择更通行的表达。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "",
+        "substringOverlaps": " ",
+        "negativeExamples": "none"
+      },
+      "reviewedAt": "2026-07-26"
+    }
+  ]
+}

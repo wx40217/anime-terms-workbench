@@ -1,0 +1,119 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "テレビアニメ",
+      "target": "待确认",
+      "status": "accepted",
+      "japaneseEvidence": [
+        {
+          "title": "测试日文资料",
+          "publisher": "示例日本动画机构",
+          "sourceType": "industry-reference",
+          "reference": "https://example.jp/television-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持日文行业含义。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "测试中文资料",
+          "publisher": "示例中国动漫媒体",
+          "sourceType": "formal-media",
+          "reference": "https://example.cn/television-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持简体中文用法。",
+          "role": "final"
+        }
+      ],
+      "rationale": "测试夹具：用于验证占位符会被拒绝。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "测试夹具：已检查。",
+        "substringOverlaps": "测试夹具：已检查。",
+        "negativeExamples": []
+      },
+      "reviewedAt": "2026-07-26"
+    },
+    {
+      "source": "劇場アニメ",
+      "target": "剧场版动画/影院动画",
+      "status": "accepted",
+      "japaneseEvidence": [
+        {
+          "title": "测试日文资料",
+          "publisher": "示例日本动画机构",
+          "sourceType": "industry-reference",
+          "reference": "https://example.jp/theatrical-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持日文行业含义。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "测试中文资料",
+          "publisher": "示例中国动漫媒体",
+          "sourceType": "formal-media",
+          "reference": "https://example.cn/theatrical-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持简体中文用法。",
+          "role": "final"
+        }
+      ],
+      "rationale": "测试夹具：用于验证并列候选会被拒绝。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "测试夹具：已检查。",
+        "substringOverlaps": "测试夹具：已检查。",
+        "negativeExamples": []
+      },
+      "reviewedAt": "2026-07-26"
+    },
+    {
+      "source": "作画監督",
+      "target": "作画监督（动画岗位）",
+      "status": "accepted",
+      "japaneseEvidence": [
+        {
+          "title": "测试日文资料",
+          "publisher": "示例日本动画机构",
+          "sourceType": "industry-reference",
+          "reference": "https://example.jp/animation-director",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持日文行业含义。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "测试中文资料",
+          "publisher": "示例中国动漫媒体",
+          "sourceType": "formal-media",
+          "reference": "https://example.cn/animation-director",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持简体中文用法。",
+          "role": "final"
+        }
+      ],
+      "rationale": "测试夹具：用于验证非固定括注会被拒绝。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "测试夹具：已检查。",
+        "substringOverlaps": "测试夹具：已检查。",
+        "negativeExamples": []
+      },
+      "reviewedAt": "2026-07-26"
+    }
+  ]
+}

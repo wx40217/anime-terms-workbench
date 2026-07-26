@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+import { validateEvidence } from "../lib/validate-evidence.js";
 
 const inputDefinitions = [
   { name: "evidence", format: "json" },
@@ -46,35 +47,50 @@ async function inspectInput(definition) {
   const inputPath = parsedArguments.inputPaths.get(definition.name);
   if (inputPath === undefined) {
     if (parsedArguments.seenInputs.has(definition.name)) {
-      return undefined;
+      return {};
     }
-    return definition.optional
-      ? undefined
-      : `${definition.name}: 缺少必需参数：--${definition.name}`;
+    return {
+      diagnostic: definition.optional
+        ? undefined
+        : `${definition.name}: 缺少必需参数：--${definition.name}`,
+    };
   }
 
   let content;
   try {
     content = await readFile(inputPath, "utf8");
   } catch {
-    return `${definition.name}: 无法读取输入文件：${inputPath}`;
+    return {
+      diagnostic: `${definition.name}: 无法读取输入文件：${inputPath}`,
+    };
   }
 
   if (definition.format === "json") {
     try {
-      JSON.parse(content);
+      return { data: JSON.parse(content) };
     } catch {
-      return `${definition.name}: JSON 格式无效：${inputPath}`;
+      return {
+        diagnostic: `${definition.name}: JSON 格式无效：${inputPath}`,
+      };
     }
   }
 
-  return undefined;
+  return { data: content };
 }
 
-const inputDiagnostics = (
-  await Promise.all(inputDefinitions.map(inspectInput))
-).filter((diagnostic) => diagnostic !== undefined);
-const diagnostics = [...parsedArguments.diagnostics, ...inputDiagnostics];
+const inspectedInputs = await Promise.all(inputDefinitions.map(inspectInput));
+const diagnostics = [...parsedArguments.diagnostics];
+
+for (const [index, inspectedInput] of inspectedInputs.entries()) {
+  if (inspectedInput.diagnostic !== undefined) {
+    diagnostics.push(inspectedInput.diagnostic);
+  } else if (
+    inputDefinitions[index].name === "evidence" &&
+    inspectedInput.data !== undefined
+  ) {
+    diagnostics.push(...validateEvidence(inspectedInput.data));
+  }
+}
 
 if (diagnostics.length > 0) {
   console.error(diagnostics.join("\n"));
