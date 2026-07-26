@@ -221,6 +221,7 @@ test("已接受术语不能用形式完整的数据绕过关键准入检查", ()
   assert.equal(result.status, 1);
   assert.equal(result.stdout, "");
   assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "evidence.records[0] (テレビアニメ): 竞争译法备选项[0]必须是非空字符串",
     "evidence.records[0] (テレビアニメ): 存在竞争译法时必须记录至少一个备选译法",
     "evidence.records[0] (テレビアニメ): 存在竞争译法时必须有至少两个不同发布机构的中文定稿来源",
     "evidence.records[0] (テレビアニメ): 非动漫含义审查必须是非空字符串",
@@ -249,6 +250,7 @@ test("定稿译法拒绝占位符、并列候选和非固定括注", () => {
     "evidence.records[0] (テレビアニメ): 定稿译法必须是单一且可直接替换的表达",
     "evidence.records[1] (劇場アニメ): 定稿译法必须是单一且可直接替换的表达",
     "evidence.records[2] (作画監督): 定稿译法必须是单一且可直接替换的表达",
+    "evidence.records[3] (撮影監督): 定稿译法必须是单一且可直接替换的表达",
   ]);
 });
 
@@ -269,7 +271,32 @@ test("发现线索来源不能伪装成定稿来源", () => {
   assert.equal(result.status, 1);
   assert.equal(result.stdout, "");
   assert.deepEqual(result.stderr.trimEnd().split("\n"), [
-    "evidence.records[0] (テレビアニメ).japaneseEvidence[0]: search-result 只能声明为 discovery 来源",
+    "evidence.records[0] (テレビアニメ).japaneseEvidence[0]: Search-Result 只能声明为 discovery 来源",
     "evidence.records[0] (テレビアニメ): 日文含义证据必须至少包含一个定稿来源",
+  ]);
+});
+
+test("候选术语允许省略未完成字段但拒绝已填写的畸形字段", () => {
+  const evidencePath = path.join(
+    invalidFixture,
+    "evidence-candidate-fields.json",
+  );
+  const result = runDeliveryReadiness([
+    "--evidence",
+    evidencePath,
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "evidence.records[0] (作画): 定稿译法必须是字符串",
+    "evidence.records[0] (作画): 取舍理由必须是字符串",
+    "evidence.records[0] (作画): 竞争译法审查必须是对象",
+    "evidence.records[0] (作画): 误匹配审查必须是对象",
+    "evidence.records[0] (作画): 复查日期必须是有效的 YYYY-MM-DD 日期",
   ]);
 });

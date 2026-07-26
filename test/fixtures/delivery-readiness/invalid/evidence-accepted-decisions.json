@@ -30,7 +30,9 @@
       "rationale": "暂拟在两个候选译法中选择更通行的表达。",
       "competitionReview": {
         "required": true,
-        "alternatives": []
+        "alternatives": [
+          42
+        ]
       },
       "mismatchRiskReview": {
         "nonAnimeMeanings": "",

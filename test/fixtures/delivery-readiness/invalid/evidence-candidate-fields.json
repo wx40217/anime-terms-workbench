@@ -1,0 +1,14 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "作画",
+      "target": [],
+      "status": "candidate",
+      "rationale": 42,
+      "competitionReview": [],
+      "mismatchRiskReview": "done",
+      "reviewedAt": "2026-02-30"
+    }
+  ]
+}

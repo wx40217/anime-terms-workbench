@@ -3,7 +3,7 @@
   "records": [
     {
       "source": "テレビアニメ",
-      "target": "电视动画",
+      "target": "电视动画（TV版）",
       "status": "accepted",
       "japaneseEvidence": [
         {
@@ -27,7 +27,7 @@
           "role": "final"
         }
       ],
-      "rationale": "测试夹具：选择能够直接替换且无竞争译法的表达。",
+      "rationale": "测试夹具：固定版本括注属于可直接替换表达的一部分。",
       "competitionReview": {
         "required": false,
         "alternatives": []

@@ -9,7 +9,7 @@
         {
           "title": "搜索结果线索",
           "publisher": "示例搜索引擎",
-          "sourceType": "search-result",
+          "sourceType": " Search-Result ",
           "reference": "https://search.example/television-anime",
           "checkedAt": "2026-07-26",
           "summary": "仅用于发现可能的日文行业用例。",
