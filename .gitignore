@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+artifacts/
+data/cache/
+data/raw/
+node_modules/
+tmp/
