@@ -30,3 +30,24 @@
 ## Current Status
 
 领域边界和首版策略已经确定。下一阶段先建立旁证结构与校验流程，并用 15 至 25 条术语完成不公开试点；试点通过后再扩充到 80 至 120 条正式首版数据。
+
+## Delivery Readiness
+
+统一交付就绪入口同时装载旁证、候选元数据、发布 CSV 和可选的公共索引状态：
+
+```sh
+npm run check:delivery -- \
+  --evidence <evidence-json> \
+  --meta <meta-json> \
+  --csv <glossary-csv> \
+  [--index <public-index-json>]
+```
+
+命令会聚合所有可定位的输入错误，发现阻塞问题时返回非零状态，并对相同输入保持确定性诊断。当前阶段检查必需参数、文件可读性和 JSON 格式；旁证准入、CSV 双向一致性及 `anime` 试点边界规则由后续工作补充。
+
+运行自动测试和静态语法检查：
+
+```sh
+npm test
+npm run check
+```

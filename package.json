@@ -1,0 +1,10 @@
+{
+  "name": "anime-terms-workbench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check scripts/check-delivery-readiness.js && node --check test/delivery-readiness.test.js",
+    "check:delivery": "node scripts/check-delivery-readiness.js",
+    "test": "node --test"
+  }
+}
