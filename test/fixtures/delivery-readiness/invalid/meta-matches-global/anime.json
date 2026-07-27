@@ -13,6 +13,8 @@
   "matches": [
     "*",
     "*://*/*",
-    "https://anime.example.jp/*"
+    "https://*/*",
+    "https://anime.example.jp/*",
+    " https://anime.example.jp/* "
   ]
 }

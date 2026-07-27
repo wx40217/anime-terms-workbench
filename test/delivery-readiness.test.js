@@ -183,6 +183,8 @@ test("anime 试点元数据不能用全局匹配凑足候选站点规则", () =>
   assert.deepEqual(result.stderr.trimEnd().split("\n"), [
     "meta.matches[0] (*): 首版不允许使用全局匹配",
     "meta.matches[1] (*://*/*): 首版不允许使用全局匹配",
+    "meta.matches[2] (https://*/*): 首版不允许使用全局匹配",
+    "meta.matches[4] (https://anime.example.jp/*): 与第 3 条站点匹配规则重复",
     "meta.matches: 必须包含 2 至 3 个受限站点匹配规则",
   ]);
 });
