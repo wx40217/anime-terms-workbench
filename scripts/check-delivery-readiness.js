@@ -1,5 +1,9 @@
 import { readFile } from "node:fs/promises";
 import { validateEvidence } from "../lib/validate-evidence.js";
+import {
+  validateEvidenceCsvConsistency,
+  validateGlossaryCsv,
+} from "../lib/validate-glossary.js";
 
 const inputDefinitions = [
   { name: "evidence", format: "json" },
@@ -80,16 +84,37 @@ async function inspectInput(definition) {
 
 const inspectedInputs = await Promise.all(inputDefinitions.map(inspectInput));
 const diagnostics = [...parsedArguments.diagnostics];
+let evidence;
+let evidenceDiagnostics = [];
+let csvRows;
+let csvDiagnostics = [];
 
 for (const [index, inspectedInput] of inspectedInputs.entries()) {
+  const inputName = inputDefinitions[index].name;
   if (inspectedInput.diagnostic !== undefined) {
     diagnostics.push(inspectedInput.diagnostic);
   } else if (
-    inputDefinitions[index].name === "evidence" &&
+    inputName === "evidence" &&
     inspectedInput.data !== undefined
   ) {
-    diagnostics.push(...validateEvidence(inspectedInput.data));
+    evidence = inspectedInput.data;
+    evidenceDiagnostics = validateEvidence(evidence);
+    diagnostics.push(...evidenceDiagnostics);
+  } else if (inputName === "csv" && inspectedInput.data !== undefined) {
+    const csvValidation = validateGlossaryCsv(inspectedInput.data);
+    csvRows = csvValidation.rows;
+    csvDiagnostics = csvValidation.diagnostics;
+    diagnostics.push(...csvDiagnostics);
   }
+}
+
+if (
+  evidence !== undefined &&
+  csvRows !== undefined &&
+  evidenceDiagnostics.length === 0 &&
+  csvDiagnostics.length === 0
+) {
+  diagnostics.push(...validateEvidenceCsvConsistency(evidence, csvRows));
 }
 
 if (diagnostics.length > 0) {

@@ -43,7 +43,7 @@ npm run check:delivery -- \
   [--index <public-index-json>]
 ```
 
-命令会聚合所有可定位的输入错误，发现阻塞问题时返回非零状态，并对相同输入保持确定性诊断。当前阶段检查必需参数、文件可读性、JSON 格式和[旁证记录准入规则](docs/evidence-format.md)；CSV 双向一致性及 `anime` 试点边界规则由后续工作补充。
+命令会聚合所有可定位的输入错误，发现阻塞问题时返回非零状态，并对相同输入保持确定性诊断。当前阶段检查必需参数、文件可读性、JSON 格式、[旁证记录准入规则](docs/evidence-format.md)，以及[发布 CSV 与旁证的严格双向一致性](docs/delivery-data-contract.md)；`anime` 试点边界规则由后续工作补充。
 
 运行自动测试和静态语法检查：
 

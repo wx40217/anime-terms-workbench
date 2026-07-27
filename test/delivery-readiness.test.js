@@ -126,6 +126,136 @@ test("公共索引输入可以省略", () => {
   assert.equal(result.stderr, "");
 });
 
+test("发布 CSV 必须使用固定表头、三列非空字段和 zh-CN 语言代码", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(invalidFixture, "glossary-structure.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "csv.header: 表头必须且只能是 source,target,tgt_lng",
+    "csv.rows[1]: source 必须是非空字符串",
+    "csv.rows[2] (源词): target 必须是非空字符串",
+    "csv.rows[2] (源词): tgt_lng 必须是 zh-CN",
+    "csv.rows[3] (短行): 必须且只能包含 3 列",
+  ]);
+});
+
+test("发布 CSV 拒绝未闭合的引用字段", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(invalidFixture, "glossary-syntax.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.equal(
+    result.stderr,
+    "csv.line[2]: CSV 格式无效：引用字段缺少结束引号\n",
+  );
+});
+
+test("发布 CSV 正确解析带分隔符和转义双引号的合法字段", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence-quoted.json"),
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary-quoted.csv"),
+  ]);
+
+  assert.equal(result.status, 0);
+  assert.equal(result.stdout, "交付就绪检查通过。\n");
+  assert.equal(result.stderr, "");
+});
+
+test("发布 CSV 定位重复 source 和互相冲突的 target", () => {
+  const arguments_ = [
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(invalidFixture, "glossary-duplicates.csv"),
+  ];
+  const result = runDeliveryReadiness(arguments_);
+  const repeatedResult = runDeliveryReadiness(arguments_);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "csv.rows[2] (テレビアニメ): source 与第 1 行重复",
+    "csv.rows[3] (テレビアニメ): source 与第 1 行的 target 冲突",
+  ]);
+  assert.equal(repeatedResult.stderr, result.stderr);
+});
+
+test("旁证记录中的重复 accepted source 会被定位", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(invalidFixture, "evidence-duplicate-accepted.json"),
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.equal(
+    result.stderr,
+    "evidence.records[1] (テレビアニメ): 已接受旁证记录与 evidence.records[0] 重复\n",
+  );
+});
+
+test("发布 CSV 拒绝候选泄漏、无旁证行和被改动的定稿译法", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(invalidFixture, "glossary-mapping.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "csv.rows[1] (劇場先行上映): 候选术语不能进入发布 CSV",
+    "csv.rows[2] (未知术语): 没有对应的已接受旁证记录",
+    "csv.rows[3] (テレビアニメ): target 与已接受译法不一致，应为 电视动画（TV版）",
+  ]);
+});
+
+test("每条已接受旁证记录都必须进入发布 CSV", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(invalidFixture, "glossary-missing.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.equal(
+    result.stderr,
+    "evidence.records[0] (テレビアニメ): 已接受术语未出现在发布 CSV\n",
+  );
+});
+
 test("统一检查命令拒绝畸形旁证记录并允许不完整候选术语", () => {
   const evidencePath = path.join(
     invalidFixture,
