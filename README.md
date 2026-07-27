@@ -8,8 +8,9 @@
   - `CONTEXT.md`
   - `docs/adr/`
   - `docs/agents/`
-  - 后续的 `evidence/anime_zh-CN.json`
-  - 后续的采集、校验与人工审查工具
+  - `evidence/anime_zh-CN.json`
+  - `reviews/anime-private-pilot.json`
+  - 采集、校验与人工审查工具
 - **交付仓库**：`/Users/zhuleiye02/Git/terms`
   - `meta/anime.json`
   - `glossaries/anime_zh-CN.csv`
@@ -29,7 +30,7 @@
 
 ## Current Status
 
-领域边界和首版策略已经确定。下一阶段先建立旁证结构与校验流程，并用 15 至 25 条术语完成不公开试点；试点通过后再扩充到 80 至 120 条正式首版数据。
+领域边界、旁证结构和校验流程已经确定。15 条术语的不公开试点已通过自动检查和两个候选站点的真实页面抽查；这不是正式发布批准。下一阶段扩充到 80 至 120 条正式首版候选，并完成每类至少两个真实页面和维护者复核。
 
 ## Delivery Readiness
 
