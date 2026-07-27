@@ -36,7 +36,7 @@ test("完整已接受术语和不完整候选术语可以通过统一检查命�
     "--evidence",
     path.join(validFixture, "evidence.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
     "--index",
@@ -96,7 +96,7 @@ test("统一检查命令定位无效的命令行参数", () => {
   const result = runDeliveryReadiness([
     "--evidence",
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
     "--unexpected",
@@ -116,7 +116,7 @@ test("公共索引输入可以省略", () => {
     "--evidence",
     path.join(validFixture, "evidence.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);
@@ -126,12 +126,105 @@ test("公共索引输入可以省略", () => {
   assert.equal(result.stderr, "");
 });
 
+test("anime 候选元数据必须统一文件身份、标识、语言和本地化信息", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(invalidFixture, "meta-identity", "not-anime.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "meta.file: 文件名必须是 anime.json",
+    "meta.id: 必须是 anime",
+    "meta.glossary: 必须引用 anime",
+    "meta.langs[0] (auto): 首版不允许使用 auto",
+    "meta.langs[1] (zh-TW): 首版不支持 zh-CN 以外的目标语言",
+    "meta.langs: 必须包含 zh-CN",
+    "meta.i18ns.zh-CN.name: 必须是非空字符串",
+    "meta.i18ns.zh-CN.description: 必须是非空字符串",
+  ]);
+});
+
+test("anime 试点元数据必须声明 2 至 3 个受限站点规则", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(invalidFixture, "meta-matches-missing", "anime.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.equal(
+    result.stderr,
+    "meta.matches: 必须包含 2 至 3 个受限站点匹配规则\n",
+  );
+});
+
+test("anime 试点元数据不能用全局匹配凑足候选站点规则", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(invalidFixture, "meta-matches-global", "anime.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "meta.matches[0] (*): 首版不允许使用全局匹配",
+    "meta.matches[1] (*://*/*): 首版不允许使用全局匹配",
+    "meta.matches: 必须包含 2 至 3 个受限站点匹配规则",
+  ]);
+});
+
+test("元数据错误和 anime 提前进入公共索引会一次确定性报告", () => {
+  const arguments_ = [
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(invalidFixture, "meta-identity", "not-anime.json"),
+    "--csv",
+    path.join(validFixture, "glossary.csv"),
+    "--index",
+    path.join(invalidFixture, "index-public.json"),
+  ];
+  const result = runDeliveryReadiness(arguments_);
+  const repeatedResult = runDeliveryReadiness(arguments_);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "meta.file: 文件名必须是 anime.json",
+    "meta.id: 必须是 anime",
+    "meta.glossary: 必须引用 anime",
+    "meta.langs[0] (auto): 首版不允许使用 auto",
+    "meta.langs[1] (zh-TW): 首版不支持 zh-CN 以外的目标语言",
+    "meta.langs: 必须包含 zh-CN",
+    "meta.i18ns.zh-CN.name: 必须是非空字符串",
+    "meta.i18ns.zh-CN.description: 必须是非空字符串",
+    "index[0] (anime): 不公开试点不得进入公共索引",
+  ]);
+  assert.equal(repeatedResult.status, result.status);
+  assert.equal(repeatedResult.stdout, result.stdout);
+  assert.equal(repeatedResult.stderr, result.stderr);
+});
+
 test("发布 CSV 必须使用固定表头、三列非空字段和 zh-CN 语言代码", () => {
   const result = runDeliveryReadiness([
     "--evidence",
     path.join(validFixture, "evidence.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(invalidFixture, "glossary-structure.csv"),
   ]);
@@ -152,7 +245,7 @@ test("发布 CSV 拒绝未闭合的引用字段", () => {
     "--evidence",
     path.join(validFixture, "evidence.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(invalidFixture, "glossary-syntax.csv"),
   ]);
@@ -170,7 +263,7 @@ test("发布 CSV 正确解析带分隔符和转义双引号的合法字段", () 
     "--evidence",
     path.join(validFixture, "evidence-quoted.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary-quoted.csv"),
   ]);
@@ -185,7 +278,7 @@ test("发布 CSV 定位重复 source 和互相冲突的 target", () => {
     "--evidence",
     path.join(validFixture, "evidence.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(invalidFixture, "glossary-duplicates.csv"),
   ];
@@ -206,7 +299,7 @@ test("结构错误不会掩盖仍可定位的重复和双向一致性错误", ()
     "--evidence",
     path.join(validFixture, "evidence.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(invalidFixture, "glossary-aggregate.csv"),
   ]);
@@ -229,7 +322,7 @@ test("旁证记录中的重复 accepted source 会被定位", () => {
     "--evidence",
     path.join(invalidFixture, "evidence-duplicate-accepted.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);
@@ -247,7 +340,7 @@ test("发布 CSV 拒绝候选泄漏、无旁证行和被改动的定稿译法", 
     "--evidence",
     path.join(validFixture, "evidence.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(invalidFixture, "glossary-mapping.csv"),
   ]);
@@ -266,7 +359,7 @@ test("每条已接受旁证记录都必须进入发布 CSV", () => {
     "--evidence",
     path.join(validFixture, "evidence.json"),
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(invalidFixture, "glossary-missing.csv"),
   ]);
@@ -288,7 +381,7 @@ test("统一检查命令拒绝畸形旁证记录并允许不完整候选术语",
     "--evidence",
     evidencePath,
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);
@@ -311,7 +404,7 @@ test("已接受术语必须满足完整旁证准入条件", () => {
     "--evidence",
     evidencePath,
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);
@@ -338,7 +431,7 @@ test("候选术语中已填写的证据项也必须使用统一结构", () => {
     "--evidence",
     evidencePath,
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);
@@ -366,7 +459,7 @@ test("已接受术语不能用形式完整的数据绕过关键准入检查", ()
     "--evidence",
     evidencePath,
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);
@@ -392,7 +485,7 @@ test("定稿译法拒绝占位符、并列候选和非固定括注", () => {
     "--evidence",
     evidencePath,
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);
@@ -416,7 +509,7 @@ test("发现线索来源不能伪装成定稿来源", () => {
     "--evidence",
     evidencePath,
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);
@@ -438,7 +531,7 @@ test("候选术语允许省略未完成字段但拒绝已填写的畸形字段",
     "--evidence",
     evidencePath,
     "--meta",
-    path.join(validFixture, "meta.json"),
+    path.join(validFixture, "anime.json"),
     "--csv",
     path.join(validFixture, "glossary.csv"),
   ]);

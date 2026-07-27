@@ -1,0 +1,18 @@
+{
+  "id": "anime",
+  "glossary": "anime",
+  "langs": [
+    "zh-CN"
+  ],
+  "i18ns": {
+    "zh-CN": {
+      "name": "动漫",
+      "description": "包含全局 matches 的无效测试夹具。"
+    }
+  },
+  "matches": [
+    "*",
+    "*://*/*",
+    "https://anime.example.jp/*"
+  ]
+}

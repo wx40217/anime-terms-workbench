@@ -1,4 +1,8 @@
 import { readFile } from "node:fs/promises";
+import {
+  validateAnimeMeta,
+  validatePrivateAnimeIndex,
+} from "../lib/validate-anime-boundary.js";
 import { validateEvidence } from "../lib/validate-evidence.js";
 import {
   analyzeGlossaryCsvRows,
@@ -101,6 +105,13 @@ for (const [index, inspectedInput] of inspectedInputs.entries()) {
     evidence = inspectedInput.data;
     evidenceDiagnostics = validateEvidence(evidence);
     diagnostics.push(...evidenceDiagnostics);
+  } else if (inputName === "meta" && inspectedInput.data !== undefined) {
+    diagnostics.push(
+      ...validateAnimeMeta(
+        inspectedInput.data,
+        parsedArguments.inputPaths.get("meta"),
+      ),
+    );
   } else if (inputName === "csv" && inspectedInput.data !== undefined) {
     const csvValidation = validateGlossaryCsv(inspectedInput.data);
     csvIsComparable = csvValidation.comparable;
@@ -110,6 +121,8 @@ for (const [index, inspectedInput] of inspectedInputs.entries()) {
       firstCsvRowBySource = csvAnalysis.firstCsvRowBySource;
       diagnostics.push(...csvAnalysis.diagnostics);
     }
+  } else if (inputName === "index" && inspectedInput.data !== undefined) {
+    diagnostics.push(...validatePrivateAnimeIndex(inspectedInput.data));
   }
 }
 

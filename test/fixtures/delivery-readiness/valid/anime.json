@@ -1,0 +1,24 @@
+{
+  "id": "anime",
+  "name": "Anime",
+  "description": "Test metadata for the anime glossary.",
+  "author": "anime-terms-workbench",
+  "glossary": "anime",
+  "langs": [
+    "zh-CN"
+  ],
+  "i18ns": {
+    "zh-CN": {
+      "name": "动漫",
+      "description": "用于测试日文动漫网页的简体中文纠错术语库。"
+    },
+    "en": {
+      "name": "Anime",
+      "description": "Test metadata for the anime glossary."
+    }
+  },
+  "matches": [
+    "https://anime.example.jp/*",
+    "https://news.example.jp/anime/*"
+  ]
+}
