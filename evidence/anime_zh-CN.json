@@ -420,16 +420,16 @@
           "role": "final"
         },
         {
-          "title": "我们的重制人生",
-          "publisher": "维基百科",
-          "sourceType": "anime-encyclopedia",
-          "reference": "https://zh.wikipedia.org/wiki/%E6%88%91%E4%BB%AC%E7%9A%84%E9%87%8D%E5%88%B6%E4%BA%BA%E7%94%9F",
+          "title": "集结团队的智慧来展现荒木飞吕彦的才华！为此奔走的JOJO动画创作团队",
+          "publisher": "《JOJO的奇妙冒险》官方入口网站",
+          "sourceType": "official-site",
+          "reference": "https://jojo-portal.com/special/production-note/zh/01/",
           "checkedAt": "2026-07-27",
-          "summary": "动漫百科作品资料使用 TV动画化决定，支持同一改编关系表达。",
+          "summary": "华纳日本运营的作品官方中文站在制作幕后文章中使用 TV动画化提案。",
           "role": "final"
         }
       ],
-      "rationale": "TV动画化直接描述原作进入电视动画媒介，授权番剧和动漫百科均有用例；保留 TV 可避免“动画化”无法区分电视、院线或网络形态。",
+      "rationale": "TV动画化直接描述原作进入电视动画媒介，授权番剧和独立作品官方中文站均有用例；保留 TV 可避免“动画化”无法区分电视、院线或网络形态。",
       "competitionReview": {
         "required": true,
         "alternatives": [
