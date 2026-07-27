@@ -19,25 +19,25 @@
       ],
       "chineseEvidence": [
         {
-          "title": "TV动画「BanG Dream! Ave Mujica」先导PV 第2弹",
-          "publisher": "MyGO_AveMujica 官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1SVyTYpEdS/",
+          "title": "由Eurobeat上色的【第二弹PV】，主要工作人员＆片桐夏向和西园寺恋的角色设定也公开！",
+          "publisher": "动画《极速车魂》官方网站",
+          "sourceType": "official-site",
+          "reference": "https://mfg-anime.com/zh-CHS/news/detail.php?id=1099514",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方账号在简体中文标题中使用 TV动画。",
+          "summary": "动画官方简体中文站使用 TV动画 指电视播出作品。",
           "role": "final"
         },
         {
-          "title": "动画版《少女前线》第二弹PV正式公开！",
-          "publisher": "少女前线制作组",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1mb4y1h7DL/",
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方账号使用 TV动画 标签和动画版播出说明，支持大陆官方传播中的 TV动画 用法。",
+          "summary": "动画官方简体中文站使用竞争表达 电视动画，提供正式译法对比。",
           "role": "final"
         }
       ],
-      "rationale": "TV动画保留行业常用的 TV 限定，较“电视动画”更贴近大陆动漫官方账号和授权页面的固定写法。",
+      "rationale": "TV动画保留行业常用的 TV 限定，动画官方简中站同时可见“电视动画”，本试点采用更贴近日文页面字面结构且跨站常见的 TV动画。",
       "competitionReview": {
         "required": true,
         "alternatives": [
@@ -46,7 +46,7 @@
       },
       "mismatchRiskReview": {
         "nonAnimeMeanings": "TV 与动画组合在候选站点中指电视播出形态，未发现独立的非动漫行业义。",
-        "substringOverlaps": "会出现在 TVアニメ化 等更长表达中；替换后成为 TV动画化，语义仍成立，但需避免另收冲突长词。",
+        "substringOverlaps": "会出现在 TVアニメ化 等更长表达中；本试点同时收录译法兼容的完整长词，并在发布 CSV 中将长词置前。",
         "negativeExamples": [
           "TVアニメーション用機材：源词不完整出现，不应按 TVアニメ 命中。",
           "TV番組：不含源词，不应替换为动画。"
@@ -126,25 +126,25 @@
       ],
       "chineseEvidence": [
         {
-          "title": "异世界自杀小队【华纳兄弟xWIT STUDIO】官方PV",
-          "publisher": "WBJ_Anime 官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1o14y1d7qu/",
+          "title": "由Eurobeat上色的【第二弹PV】，主要工作人员＆片桐夏向和西园寺恋的角色设定也公开！",
+          "publisher": "动画《极速车魂》官方网站",
+          "sourceType": "official-site",
+          "reference": "https://mfg-anime.com/zh-CHS/news/detail.php?id=1099514",
           "checkedAt": "2026-07-27",
-          "summary": "版权方官方简中 STAFF 表使用 系列构成。",
+          "summary": "动画官方简中站的主要工作人员表使用 系列构成。",
           "role": "final"
         },
         {
-          "title": "《蔚蓝档案》The Animation预告PV",
-          "publisher": "蔚蓝档案官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1np421U7BF/",
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方账号在简中 STAFF 表使用 系列构成。",
+          "summary": "动画官方简中 STAFF 表使用 系列构成与剧本。",
           "role": "final"
         }
       ],
-      "rationale": "系列构成是大陆官方动画 STAFF 表中的稳定职务名；“剧本统筹”偏职责解释，会丢失原始署名名称。",
+      "rationale": "系列构成是多个动画官方简中 STAFF 表中的稳定职务名；“剧本统筹”偏职责解释，会丢失原始署名名称。",
       "competitionReview": {
         "required": true,
         "alternatives": [
@@ -162,9 +162,9 @@
       "reviewedAt": "2026-07-27"
     },
     {
-      "source": "キャラクターデザイン",
+      "source": "サブキャラクターデザイン",
       "status": "accepted",
-      "target": "角色设计",
+      "target": "副角色设计",
       "category": "制作职务与署名",
       "japaneseEvidence": [
         {
@@ -173,7 +173,7 @@
           "sourceType": "trade-media",
           "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
           "checkedAt": "2026-07-27",
-          "summary": "正文和 STAFF 表均以 キャラクターデザイン 标示角色造型设计职务。",
+          "summary": "STAFF 表以 サブキャラクターデザイン 标示辅助角色的造型设计职务。",
           "role": "final"
         }
       ],
@@ -184,32 +184,21 @@
           "sourceType": "licensed-platform",
           "reference": "https://www.bilibili.com/bangumi/play/ss26473",
           "checkedAt": "2026-07-27",
-          "summary": "授权番剧页面的简中职员表使用 角色设计。",
-          "role": "final"
-        },
-        {
-          "title": "《蔚蓝档案》The Animation预告PV",
-          "publisher": "蔚蓝档案官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1np421U7BF/",
-          "checkedAt": "2026-07-27",
-          "summary": "作品官方简中 STAFF 表使用 角色设计。",
+          "summary": "授权番剧页面的简中职员表使用 副角色设计，与日文辅助角色设计职务一一对应。",
           "role": "final"
         }
       ],
-      "rationale": "角色设计是授权页面和官方账号一致采用的动画职务名，比泛化的“人物设计”更贴近动漫角色语境。",
+      "rationale": "完整源词采用授权番剧职员表中的 副角色设计；不保留较短的 キャラクターデザイン，以免在本词中产生“サブ角色设计”的有害部分替换。",
       "competitionReview": {
-        "required": true,
-        "alternatives": [
-          "人物设计"
-        ]
+        "required": false,
+        "alternatives": []
       },
       "mismatchRiskReview": {
-        "nonAnimeMeanings": "游戏和广告同样使用该职务，但目标 角色设计 在这些邻近语境仍准确。",
-        "substringOverlaps": "会包含于 サブキャラクターデザイン 和 キャラクターデザイン原案；前者不从词首命中，后者替换后仍需翻译 原案。",
+        "nonAnimeMeanings": "游戏等领域也可能使用该完整职务词；候选白名单限定到动画官网页面。",
+        "substringOverlaps": "完整源词包含较短的 キャラクターデザイン；本试点不收录该短词，避免生成 サブ角色设计。后接 原案 时仍只替换完整职务部分。",
         "negativeExamples": [
-          "サブキャラクターデザイン：不得把后半词孤立替换后误认为主角色设计。",
-          "キャラクターデザイン原案：替换后仅完成角色设计部分，不能省略 原案。"
+          "キャラクターデザイン：不含 サブ，不应替换为副角色设计。",
+          "サブキャラクターデザイン原案：替换为 副角色设计原案，不能省略后续 原案。"
         ]
       },
       "reviewedAt": "2026-07-27"
@@ -241,16 +230,16 @@
           "role": "final"
         },
         {
-          "title": "《蔚蓝档案》The Animation预告PV",
-          "publisher": "蔚蓝档案官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1np421U7BF/",
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方简中 STAFF 表使用 总作画监督。",
+          "summary": "动画官方简中 STAFF 表使用竞争表达 总作画导演，提供正式译法对比。",
           "role": "final"
         }
       ],
-      "rationale": "总作画监督是授权番剧与作品官方账号一致采用的署名；“总作画导演”虽可见，但与大陆动画职员表主流监督体系不一致。",
+      "rationale": "授权番剧页使用 总作画监督，动画官方简中站也可见 总作画导演；为保持日本动画 監督 职务体系的一致性，采用 总作画监督。",
       "competitionReview": {
         "required": true,
         "alternatives": [
@@ -294,12 +283,12 @@
           "role": "final"
         },
         {
-          "title": "《蔚蓝档案》The Animation预告PV",
-          "publisher": "蔚蓝档案官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1np421U7BF/",
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方简中 STAFF 表使用 美术监督。",
+          "summary": "动画官方简中 STAFF 表使用竞争表达 美术指导，提供正式译法对比。",
           "role": "final"
         }
       ],
@@ -405,43 +394,55 @@
       "reviewedAt": "2026-07-27"
     },
     {
-      "source": "コミカライズ",
+      "source": "TVアニメ化",
       "status": "accepted",
-      "target": "漫画化",
+      "target": "TV动画化",
       "category": "原作与改编关系",
       "japaneseEvidence": [
         {
-          "title": "劇場版「陰の実力者になりたくて！ 残響編」2027年劇場公開決定！新キャストに田村ゆかり「とても演じがいのあるお役でした」",
-          "publisher": "アニメ！アニメ！",
+          "title": "TVアニメ『デスマ』ティザービジュアルとティザーPVが公開！",
+          "publisher": "アニメイトタイムズ",
           "sourceType": "trade-media",
-          "reference": "https://animeanime.jp/article/2026/03/29/97294.html",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1502352834",
           "checkedAt": "2026-07-27",
-          "summary": "正文以 コミカライズ 指原作小说向漫画媒介的改编展开。",
+          "summary": "正文以 TVアニメ化 描述小说和漫画作品确定改编为电视动画。",
           "role": "final"
         }
       ],
       "chineseEvidence": [
         {
-          "title": "转生成为魔剑了",
-          "publisher": "哔哩哔哩漫画",
+          "title": "青之芦苇",
+          "publisher": "哔哩哔哩番剧",
           "sourceType": "licensed-platform",
-          "reference": "https://manga.bilibili.com/m/detail/mc27885",
+          "reference": "https://www.bilibili.com/bangumi/play/ep729196",
           "checkedAt": "2026-07-27",
-          "summary": "授权漫画详情页用“网络小说终于漫画化登场”描述小说改编为漫画。",
+          "summary": "授权番剧简介以 TV动画化 描述足球漫画改编为电视动画。",
+          "role": "final"
+        },
+        {
+          "title": "我们的重制人生",
+          "publisher": "维基百科",
+          "sourceType": "anime-encyclopedia",
+          "reference": "https://zh.wikipedia.org/wiki/%E6%88%91%E4%BB%AC%E7%9A%84%E9%87%8D%E5%88%B6%E4%BA%BA%E7%94%9F",
+          "checkedAt": "2026-07-27",
+          "summary": "动漫百科作品资料使用 TV动画化决定，支持同一改编关系表达。",
           "role": "final"
         }
       ],
-      "rationale": "漫画化准确表达向漫画媒介改编；“漫画改编”在简中通常反向表示以漫画为原作改编成其他媒介，不作为竞争同义词。",
+      "rationale": "TV动画化直接描述原作进入电视动画媒介，授权番剧和动漫百科均有用例；保留 TV 可避免“动画化”无法区分电视、院线或网络形态。",
       "competitionReview": {
-        "required": false,
-        "alternatives": []
+        "required": true,
+        "alternatives": [
+          "电视动画化",
+          "改编为TV动画"
+        ]
       },
       "mismatchRiskReview": {
-        "nonAnimeMeanings": "也可用于真人作品或知识内容转成漫画，目标 漫画化 在这些语境同样成立。",
-        "substringOverlaps": "与 コミカライズ版 等组合使用；替换后 版 可自然形成 漫画化版。",
+        "nonAnimeMeanings": "完整词明确表示改编为电视动画，未发现需要保留的非动漫行业义。",
+        "substringOverlaps": "包含 TVアニメ；最长词优先时应先替换本条，避免只得到 TV动画化 的偶然拼接并失去独立证据关系。",
         "negativeExamples": [
-          "コミック原作：表示漫画原作，不等于漫画化。",
-          "コミカライズ担当：替换后为漫画化担当，后续职务关系保持不变。"
+          "TVアニメ：仅表示播出形态，不包含改编关系。",
+          "劇場アニメ化：院线动画化，不应替换为 TV动画化。"
         ]
       },
       "reviewedAt": "2026-07-27"
@@ -464,16 +465,16 @@
       ],
       "chineseEvidence": [
         {
-          "title": "异世界自杀小队【华纳兄弟xWIT STUDIO】官方PV",
-          "publisher": "WBJ_Anime 官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1o14y1d7qu/",
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
           "checkedAt": "2026-07-27",
-          "summary": "版权方官方简中 STAFF 表使用 动画制作。",
+          "summary": "动画官方简中 STAFF 表使用 动画制作。",
           "role": "final"
         }
       ],
-      "rationale": "动画制作是版权方简中职员表的稳定部门署名，避免机器直译为“动画片制作”。",
+      "rationale": "动画制作是动画官方简中职员表的稳定部门署名，避免机器直译为“动画片制作”。",
       "competitionReview": {
         "required": false,
         "alternatives": []
@@ -506,12 +507,12 @@
       ],
       "chineseEvidence": [
         {
-          "title": "【7月】人马少女的烦恼 中文PV1",
-          "publisher": "绘梦动画官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/av10971993/",
+          "title": "至高指令",
+          "publisher": "百度百科",
+          "sourceType": "anime-encyclopedia",
+          "reference": "https://baike.baidu.com/item/%E8%87%B3%E9%AB%98%E6%8C%87%E4%BB%A4/18740314",
           "checkedAt": "2026-07-27",
-          "summary": "动画公司官方账号明确写“作为制作委员会参与”。",
+          "summary": "动漫百科的制作人员资料以 制作委员会 标示动画联合制作组织。",
           "role": "final"
         }
       ],
@@ -557,12 +558,12 @@
           "role": "final"
         },
         {
-          "title": "《蔚蓝档案》The Animation预告PV",
-          "publisher": "蔚蓝档案官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1np421U7BF/",
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方简中 STAFF 表使用 摄影监督。",
+          "summary": "动画官方简中 STAFF 表使用竞争表达 摄影导演，提供正式译法对比。",
           "role": "final"
         }
       ],
@@ -610,16 +611,16 @@
           "role": "final"
         },
         {
-          "title": "《蔚蓝档案》The Animation预告PV",
-          "publisher": "蔚蓝档案官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1np421U7BF/",
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方简中 STAFF 表使用 音响监督。",
+          "summary": "动画官方简中 STAFF 表使用 音响监督。",
           "role": "final"
         }
       ],
-      "rationale": "音响监督是授权页面和官方账号一致使用的职务译名，比“音效导演”覆盖范围更准确。",
+      "rationale": "音响监督是授权番剧页和动画官方站一致使用的职务译名，比“音效导演”覆盖范围更准确。",
       "competitionReview": {
         "required": true,
         "alternatives": [
@@ -655,21 +656,21 @@
       ],
       "chineseEvidence": [
         {
-          "title": "主线动画《明日方舟：黎明前奏》先导PV",
-          "publisher": "明日方舟官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1jL4y1V79g/",
+          "title": "胆大党 第二季先导PV",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ep1801074",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方账号将动画 teaser video 标作 先导PV。",
+          "summary": "授权番剧资料页将动画 teaser video 标作 先导PV。",
           "role": "final"
         },
         {
-          "title": "TV动画「BanG Dream! Ave Mujica」先导PV 第2弹",
-          "publisher": "MyGO_AveMujica 官方账号",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1SVyTYpEdS/",
+          "title": "新闻 | 动画《极速车魂》官方网站",
+          "publisher": "动画《极速车魂》官方网站",
+          "sourceType": "official-site",
+          "reference": "https://mfg-anime.com/zh-CHS/news/index.php?page=3",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方账号在简中标题中稳定使用 先导PV。",
+          "summary": "动画官方简中站对 teaser PV 使用竞争表达 预告PV，提供正式译法对比。",
           "role": "final"
         }
       ],
@@ -709,12 +710,12 @@
       ],
       "chineseEvidence": [
         {
-          "title": "动画版《少女前线》第二弹PV正式公开！",
-          "publisher": "少女前线制作组",
-          "sourceType": "rights-holder",
-          "reference": "https://www.bilibili.com/video/BV1mb4y1h7DL/",
+          "title": "片桐夏向与TOYOTA86疾驰……第3弹PV及主视觉图公开！",
+          "publisher": "动画《极速车魂》官方网站",
+          "sourceType": "official-site",
+          "reference": "https://mfg-anime.com/zh-CHS/news/detail.php?id=1105274",
           "checkedAt": "2026-07-27",
-          "summary": "作品官方账号在简中说明中使用 主视觉图。",
+          "summary": "动画官方简中新闻使用 主视觉图。",
           "role": "final"
         },
         {
