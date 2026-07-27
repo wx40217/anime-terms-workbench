@@ -3,6 +3,7 @@ import { validateEvidence } from "../lib/validate-evidence.js";
 import {
   validateEvidenceCsvConsistency,
   validateGlossaryCsv,
+  validateGlossaryCsvUniqueness,
 } from "../lib/validate-glossary.js";
 
 const inputDefinitions = [
@@ -87,7 +88,7 @@ const diagnostics = [...parsedArguments.diagnostics];
 let evidence;
 let evidenceDiagnostics = [];
 let csvRows;
-let csvDiagnostics = [];
+let csvIsComparable = false;
 
 for (const [index, inspectedInput] of inspectedInputs.entries()) {
   const inputName = inputDefinitions[index].name;
@@ -103,8 +104,11 @@ for (const [index, inspectedInput] of inspectedInputs.entries()) {
   } else if (inputName === "csv" && inspectedInput.data !== undefined) {
     const csvValidation = validateGlossaryCsv(inspectedInput.data);
     csvRows = csvValidation.rows;
-    csvDiagnostics = csvValidation.diagnostics;
-    diagnostics.push(...csvDiagnostics);
+    csvIsComparable = csvValidation.comparable;
+    diagnostics.push(...csvValidation.diagnostics);
+    if (csvIsComparable) {
+      diagnostics.push(...validateGlossaryCsvUniqueness(csvRows));
+    }
   }
 }
 
@@ -112,7 +116,7 @@ if (
   evidence !== undefined &&
   csvRows !== undefined &&
   evidenceDiagnostics.length === 0 &&
-  csvDiagnostics.length === 0
+  csvIsComparable
 ) {
   diagnostics.push(...validateEvidenceCsvConsistency(evidence, csvRows));
 }

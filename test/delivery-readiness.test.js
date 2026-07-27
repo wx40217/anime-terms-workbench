@@ -201,6 +201,27 @@ test("发布 CSV 定位重复 source 和互相冲突的 target", () => {
   assert.equal(repeatedResult.stderr, result.stderr);
 });
 
+test("结构错误不会掩盖仍可定位的重复和双向一致性错误", () => {
+  const result = runDeliveryReadiness([
+    "--evidence",
+    path.join(validFixture, "evidence.json"),
+    "--meta",
+    path.join(validFixture, "meta.json"),
+    "--csv",
+    path.join(invalidFixture, "glossary-aggregate.csv"),
+  ]);
+
+  assert.equal(result.status, 1);
+  assert.equal(result.stdout, "");
+  assert.deepEqual(result.stderr.trimEnd().split("\n"), [
+    "csv.rows[1] (劇場先行上映): tgt_lng 必须是 zh-CN",
+    "csv.rows[2] (劇場先行上映): tgt_lng 必须是 zh-CN",
+    "csv.rows[2] (劇場先行上映): source 与第 1 行重复",
+    "csv.rows[1] (劇場先行上映): 候选术语不能进入发布 CSV",
+    "evidence.records[0] (テレビアニメ): 已接受术语未出现在发布 CSV",
+  ]);
+});
+
 test("旁证记录中的重复 accepted source 会被定位", () => {
   const result = runDeliveryReadiness([
     "--evidence",
