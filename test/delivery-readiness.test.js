@@ -216,7 +216,9 @@ test("结构错误不会掩盖仍可定位的重复和双向一致性错误", ()
   assert.deepEqual(result.stderr.trimEnd().split("\n"), [
     "csv.rows[1] (劇場先行上映): tgt_lng 必须是 zh-CN",
     "csv.rows[2] (劇場先行上映): tgt_lng 必须是 zh-CN",
+    "csv.rows[3] (劇場先行上映): 必须且只能包含 3 列",
     "csv.rows[2] (劇場先行上映): source 与第 1 行重复",
+    "csv.rows[3] (劇場先行上映): source 与第 1 行重复",
     "csv.rows[1] (劇場先行上映): 候选术语不能进入发布 CSV",
     "evidence.records[0] (テレビアニメ): 已接受术语未出现在发布 CSV",
   ]);

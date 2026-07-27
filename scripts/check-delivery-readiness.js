@@ -1,9 +1,9 @@
 import { readFile } from "node:fs/promises";
 import { validateEvidence } from "../lib/validate-evidence.js";
 import {
+  analyzeGlossaryCsvRows,
   validateEvidenceCsvConsistency,
   validateGlossaryCsv,
-  validateGlossaryCsvUniqueness,
 } from "../lib/validate-glossary.js";
 
 const inputDefinitions = [
@@ -87,8 +87,8 @@ const inspectedInputs = await Promise.all(inputDefinitions.map(inspectInput));
 const diagnostics = [...parsedArguments.diagnostics];
 let evidence;
 let evidenceDiagnostics = [];
-let csvRows;
 let csvIsComparable = false;
+let firstCsvRowBySource;
 
 for (const [index, inspectedInput] of inspectedInputs.entries()) {
   const inputName = inputDefinitions[index].name;
@@ -103,22 +103,25 @@ for (const [index, inspectedInput] of inspectedInputs.entries()) {
     diagnostics.push(...evidenceDiagnostics);
   } else if (inputName === "csv" && inspectedInput.data !== undefined) {
     const csvValidation = validateGlossaryCsv(inspectedInput.data);
-    csvRows = csvValidation.rows;
     csvIsComparable = csvValidation.comparable;
     diagnostics.push(...csvValidation.diagnostics);
     if (csvIsComparable) {
-      diagnostics.push(...validateGlossaryCsvUniqueness(csvRows));
+      const csvAnalysis = analyzeGlossaryCsvRows(csvValidation.rows);
+      firstCsvRowBySource = csvAnalysis.firstCsvRowBySource;
+      diagnostics.push(...csvAnalysis.diagnostics);
     }
   }
 }
 
 if (
   evidence !== undefined &&
-  csvRows !== undefined &&
+  firstCsvRowBySource !== undefined &&
   evidenceDiagnostics.length === 0 &&
   csvIsComparable
 ) {
-  diagnostics.push(...validateEvidenceCsvConsistency(evidence, csvRows));
+  diagnostics.push(
+    ...validateEvidenceCsvConsistency(evidence, firstCsvRowBySource),
+  );
 }
 
 if (diagnostics.length > 0) {
