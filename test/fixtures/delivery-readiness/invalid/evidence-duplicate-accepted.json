@@ -1,0 +1,81 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "テレビアニメ",
+      "target": "电视动画（TV版）",
+      "status": "accepted",
+      "japaneseEvidence": [
+        {
+          "title": "测试用日文资料一",
+          "publisher": "示例日本机构一",
+          "sourceType": "industry-reference",
+          "reference": "https://example.jp/television-anime-1",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：第一条重复记录的日文证据。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "测试用中文资料一",
+          "publisher": "示例中国机构一",
+          "sourceType": "formal-media",
+          "reference": "https://example.cn/television-anime-1",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：第一条重复记录的中文证据。",
+          "role": "final"
+        }
+      ],
+      "rationale": "测试夹具：第一条已接受记录。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "测试夹具：已检查非动漫含义。",
+        "substringOverlaps": "测试夹具：已检查子串重叠。",
+        "negativeExamples": []
+      },
+      "reviewedAt": "2026-07-26"
+    },
+    {
+      "source": "テレビアニメ",
+      "target": "电视动画（TV版）",
+      "status": "accepted",
+      "japaneseEvidence": [
+        {
+          "title": "测试用日文资料二",
+          "publisher": "示例日本机构二",
+          "sourceType": "industry-reference",
+          "reference": "https://example.jp/television-anime-2",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：第二条重复记录的日文证据。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "测试用中文资料二",
+          "publisher": "示例中国机构二",
+          "sourceType": "formal-media",
+          "reference": "https://example.cn/television-anime-2",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：第二条重复记录的中文证据。",
+          "role": "final"
+        }
+      ],
+      "rationale": "测试夹具：第二条已接受记录。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "测试夹具：已检查非动漫含义。",
+        "substringOverlaps": "测试夹具：已检查子串重叠。",
+        "negativeExamples": []
+      },
+      "reviewedAt": "2026-07-26"
+    }
+  ]
+}

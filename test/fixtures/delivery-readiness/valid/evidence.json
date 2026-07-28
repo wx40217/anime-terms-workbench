@@ -1,0 +1,53 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "テレビアニメ",
+      "target": "电视动画（TV版）",
+      "status": "accepted",
+      "japaneseEvidence": [
+        {
+          "title": "测试用日文行业资料",
+          "publisher": "示例日本动画机构",
+          "sourceType": "industry-reference",
+          "reference": "https://example.jp/television-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持该源词在动画行业语境中的含义。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "测试用中文正式资料",
+          "publisher": "示例中国动漫媒体",
+          "sourceType": "formal-media",
+          "reference": "https://example.cn/television-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持“电视动画”在简体中文正式动漫语境中的用法。",
+          "role": "final"
+        }
+      ],
+      "rationale": "测试夹具：固定版本括注属于可直接替换表达的一部分。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "测试夹具：已检查，未发现影响本次判断的非动漫含义。",
+        "substringOverlaps": "测试夹具：已检查与更长术语的子串关系。",
+        "negativeExamples": []
+      },
+      "reviewedAt": "2026-07-26"
+    },
+    {
+      "source": "劇場先行上映",
+      "status": "candidate",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "影院先行上映"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "anime-terms-workbench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check lib/validate-anime-boundary.js && node --check lib/validate-evidence.js && node --check lib/validate-glossary.js && node --check scripts/check-delivery-readiness.js && node --check test/delivery-readiness.test.js",
+    "check:delivery": "node scripts/check-delivery-readiness.js",
+    "test": "node --test"
+  }
+}

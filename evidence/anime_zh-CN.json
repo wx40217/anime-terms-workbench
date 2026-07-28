@@ -1,0 +1,750 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "TVアニメ",
+      "status": "accepted",
+      "target": "TV动画",
+      "category": "作品形态与播出发行",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "标题、正文和作品资料均以 TVアニメ 指电视播出的动画作品。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "由Eurobeat上色的【第二弹PV】，主要工作人员＆片桐夏向和西园寺恋的角色设定也公开！",
+          "publisher": "动画《极速车魂》官方网站",
+          "sourceType": "official-site",
+          "reference": "https://mfg-anime.com/zh-CHS/news/detail.php?id=1099514",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简体中文站使用 TV动画 指电视播出作品。",
+          "role": "final"
+        },
+        {
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简体中文站使用竞争表达 电视动画，提供正式译法对比。",
+          "role": "final"
+        }
+      ],
+      "rationale": "TV动画保留行业常用的 TV 限定，动画官方简中站同时可见“电视动画”，本试点采用更贴近日文页面字面结构且跨站常见的 TV动画。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "电视动画"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "TV 与动画组合在候选站点中指电视播出形态，未发现独立的非动漫行业义。",
+        "substringOverlaps": "会出现在 TVアニメ化 等更长表达中；本试点同时收录译法兼容的完整长词，并在发布 CSV 中将长词置前。",
+        "negativeExamples": [
+          "TVアニメーション用機材：源词不完整出现，不应按 TVアニメ 命中。",
+          "TV番組：不含源词，不应替换为动画。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "劇場アニメ",
+      "status": "accepted",
+      "target": "动画电影",
+      "category": "作品形态与播出发行",
+      "japaneseEvidence": [
+        {
+          "title": "2019年上半期ベスト“劇場アニメ”は？／劇場版「セーラームーン」前・後編で2020年公開：7月1日記事まとめ",
+          "publisher": "アニメ！アニメ！",
+          "sourceType": "trade-media",
+          "reference": "https://animeanime.jp/article/2019/07/02/46584.html",
+          "checkedAt": "2026-07-27",
+          "summary": "页面以 劇場アニメ 指在影院上映的动画长片类别。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "日本动画电影《玛丽与魔女之花》公映",
+          "publisher": "人民日报海外版",
+          "sourceType": "national-media",
+          "reference": "https://paper.people.com.cn/rmrbhwb/html/2018-04/30/content_1851364.htm",
+          "checkedAt": "2026-07-27",
+          "summary": "正式报道以 动画电影 指日本影院动画作品。",
+          "role": "final"
+        },
+        {
+          "title": "力压好莱坞！2024日本动画电影凭什么创造奇迹？",
+          "publisher": "1905电影网",
+          "sourceType": "industry-media",
+          "reference": "https://www.1905.com/m/news/touch/1707629.shtml",
+          "checkedAt": "2026-07-27",
+          "summary": "电影行业媒体持续以 日本动画电影 统称日本院线动画作品。",
+          "role": "final"
+        }
+      ],
+      "rationale": "动画电影是中国大陆正式电影报道中的通行类别名；“剧场动画”直译生硬，“剧场版动画”又把原创院线动画误限为既有作品的剧场版。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "剧场动画",
+          "剧场版动画"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "日文 剧场 可指戏院空间，但完整复合词 劇場アニメ 在抽查页面中专指院线动画。",
+        "substringOverlaps": "与 劇場版 不构成包含关系，不能用本词替代所有 劇場版。",
+        "negativeExamples": [
+          "劇場アニメーション設備：可能指剧场内动画展示设备，不应视为作品形态。",
+          "劇場版：不含完整源词，不能自动替换为动画电影。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "シリーズ構成",
+      "status": "accepted",
+      "target": "系列构成",
+      "category": "制作职务与署名",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "正式 STAFF 表将 シリーズ構成 作为独立制作职务署名。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "由Eurobeat上色的【第二弹PV】，主要工作人员＆片桐夏向和西园寺恋的角色设定也公开！",
+          "publisher": "动画《极速车魂》官方网站",
+          "sourceType": "official-site",
+          "reference": "https://mfg-anime.com/zh-CHS/news/detail.php?id=1099514",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中站的主要工作人员表使用 系列构成。",
+          "role": "final"
+        },
+        {
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中 STAFF 表使用 系列构成与剧本。",
+          "role": "final"
+        }
+      ],
+      "rationale": "系列构成是多个动画官方简中 STAFF 表中的稳定职务名；“剧本统筹”偏职责解释，会丢失原始署名名称。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "剧本统筹"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "普通系列产品也可能谈“系列构成”，但日文完整职务词在候选动漫新闻的 STAFF 区域含义明确。",
+        "substringOverlaps": "与 シリーズ構成・脚本 等并列署名相邻，但不应吞并后续 脚本。",
+        "negativeExamples": [
+          "シリーズ商品の構成：未出现完整连续源词。",
+          "シリーズ構成・脚本：仅替换前半职务，保留分隔符和脚本署名。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "サブキャラクターデザイン",
+      "status": "accepted",
+      "target": "副角色设计",
+      "category": "制作职务与署名",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "STAFF 表以 サブキャラクターデザイン 标示辅助角色的造型设计职务。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "东京ESP",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ss26473",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧页面的简中职员表使用 副角色设计，与日文辅助角色设计职务一一对应。",
+          "role": "final"
+        }
+      ],
+      "rationale": "完整源词采用授权番剧职员表中的 副角色设计；不保留较短的 キャラクターデザイン，以免在本词中产生“サブ角色设计”的有害部分替换。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "游戏等领域也可能使用该完整职务词；候选白名单限定到动画官网页面。",
+        "substringOverlaps": "完整源词包含较短的 キャラクターデザイン；本试点不收录该短词，避免生成 サブ角色设计。后接 原案 时仍只替换完整职务部分。",
+        "negativeExamples": [
+          "キャラクターデザイン：不含 サブ，不应替换为副角色设计。",
+          "サブキャラクターデザイン原案：替换为 副角色设计原案，不能省略后续 原案。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "総作画監督",
+      "status": "accepted",
+      "target": "总作画监督",
+      "category": "制作职务与署名",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "STAFF 表将 総作画監督 作为统筹作画一致性的职务。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "东京ESP",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ss26473",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧页面使用 总作画监督。",
+          "role": "final"
+        },
+        {
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中 STAFF 表使用竞争表达 总作画导演，提供正式译法对比。",
+          "role": "final"
+        }
+      ],
+      "rationale": "授权番剧页使用 总作画监督，动画官方简中站也可见 总作画导演；为保持日本动画 監督 职务体系的一致性，采用 总作画监督。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "总作画导演"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "该复合职务高度限定于动画制作，未发现需要保留的非动漫义。",
+        "substringOverlaps": "包含 作画監督，但本试点不收短词，避免长短词竞争。",
+        "negativeExamples": [
+          "作画監督：缺少 総，不得替换为总作画监督。",
+          "総作画監督補佐：只能替换主职务部分，補佐仍需另译。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "美術監督",
+      "status": "accepted",
+      "target": "美术监督",
+      "category": "制作流程与素材",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "STAFF 表以 美術監督 标示动画美术部门负责人。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "东京ESP",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ss26473",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧页面使用 美术监督。",
+          "role": "final"
+        },
+        {
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中 STAFF 表使用竞争表达 美术指导，提供正式译法对比。",
+          "role": "final"
+        }
+      ],
+      "rationale": "美术监督保留日本动画职务体系中的监督称谓；“美术指导”更常见于真人影视，易抹平制度差异。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "美术指导"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "真人影视也有近似职务，但完整日文词在候选动画 STAFF 区域语义稳定。",
+        "substringOverlaps": "与 美術設定 是并列不同职务，不存在包含关系。",
+        "negativeExamples": [
+          "美術館監督：不含完整源词。",
+          "美術設定：不得替换为美术监督。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "美術設定",
+      "status": "accepted",
+      "target": "美术设定",
+      "category": "制作流程与素材",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "STAFF 表把 美術設定 与 美術監督 分列为不同制作职务。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "东京ESP",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ss26473",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧简中职员表使用 美术设定。",
+          "role": "final"
+        }
+      ],
+      "rationale": "美术设定逐字准确且是授权动画职员表固定用语，不需要扩写为场景美术设定。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "美术领域可泛指设定工作，但目标表达在相邻语境仍准确。",
+        "substringOverlaps": "与 美術監督 并列而不重叠；不得互换。",
+        "negativeExamples": [
+          "美術設定資料集：替换后为美术设定資料集，后半仍需正常翻译。",
+          "設定美術：词序不同，不应命中。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "色彩設計",
+      "status": "accepted",
+      "target": "色彩设计",
+      "category": "制作流程与素材",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "STAFF 表使用 色彩設計 作为动画色彩方案职务。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "东京ESP",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ss26473",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧简中职员表使用 色彩设计。",
+          "role": "final"
+        }
+      ],
+      "rationale": "色彩设计是授权职员表中的直接、自然职务名；不扩写职责。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "平面、产品等设计领域也使用同形概念，目标在这些语境中仍准确。",
+        "substringOverlaps": "与 色彩設計監修 等长词可能重叠；替换后 監修 仍须单独翻译。",
+        "negativeExamples": [
+          "色彩設定：末字不同，不应命中。",
+          "色彩設計監修：仅替换职务核心，不能丢弃監修。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "TVアニメ化",
+      "status": "accepted",
+      "target": "TV动画化",
+      "category": "原作与改编关系",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『デスマ』ティザービジュアルとティザーPVが公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1502352834",
+          "checkedAt": "2026-07-27",
+          "summary": "正文以 TVアニメ化 描述小说和漫画作品确定改编为电视动画。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "青之芦苇",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ep729196",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧简介以 TV动画化 描述足球漫画改编为电视动画。",
+          "role": "final"
+        },
+        {
+          "title": "集结团队的智慧来展现荒木飞吕彦的才华！为此奔走的JOJO动画创作团队",
+          "publisher": "《JOJO的奇妙冒险》官方入口网站",
+          "sourceType": "official-site",
+          "reference": "https://jojo-portal.com/special/production-note/zh/01/",
+          "checkedAt": "2026-07-27",
+          "summary": "华纳日本运营的作品官方中文站在制作幕后文章中使用 TV动画化提案。",
+          "role": "final"
+        }
+      ],
+      "rationale": "TV动画化直接描述原作进入电视动画媒介，授权番剧和独立作品官方中文站均有用例；保留 TV 可避免“动画化”无法区分电视、院线或网络形态。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "电视动画化",
+          "改编为TV动画"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "完整词明确表示改编为电视动画，未发现需要保留的非动漫行业义。",
+        "substringOverlaps": "包含 TVアニメ；最长词优先时应先替换本条，避免只得到 TV动画化 的偶然拼接并失去独立证据关系。",
+        "negativeExamples": [
+          "TVアニメ：仅表示播出形态，不包含改编关系。",
+          "劇場アニメ化：院线动画化，不应替换为 TV动画化。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "アニメーション制作",
+      "status": "accepted",
+      "target": "动画制作",
+      "category": "行业组织与制作体制",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "STAFF 表以 アニメーション制作 标示承担动画成片制作的公司。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中 STAFF 表使用 动画制作。",
+          "role": "final"
+        }
+      ],
+      "rationale": "动画制作是动画官方简中职员表的稳定部门署名，避免机器直译为“动画片制作”。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "也可描述广告或短片动画制作，目标仍准确。",
+        "substringOverlaps": "会包含于 アニメーション制作会社；替换后会留下日文 会社，因此页面级检查必须确认周边翻译。",
+        "negativeExamples": [
+          "アニメーション制作会社：仅术语替换会得到混合语言的 动画制作会社，不能视为整句翻译完成。",
+          "アニメーションプロデューサー：不含完整源词，不应替换。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "製作委員会",
+      "status": "accepted",
+      "target": "制作委员会",
+      "category": "行业组织与制作体制",
+      "japaneseEvidence": [
+        {
+          "title": "「アンナチュラル」野木亜紀子が原案・脚本×WIT STUDIOが制作！完全新作オリジナルアニメーション「LONA」2027年春より放送開始",
+          "publisher": "アニメ！アニメ！",
+          "sourceType": "trade-media",
+          "reference": "https://animeanime.jp/article/2026/06/29/100510.html",
+          "checkedAt": "2026-07-27",
+          "summary": "正文使用 製作委員会幹事 描述 WIT STUDIO 在项目联合出资组织中的职责。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "至高指令",
+          "publisher": "百度百科",
+          "sourceType": "anime-encyclopedia",
+          "reference": "https://baike.baidu.com/item/%E8%87%B3%E9%AB%98%E6%8C%87%E4%BB%A4/18740314",
+          "checkedAt": "2026-07-27",
+          "summary": "动漫百科的制作人员资料以 制作委员会 标示动画联合制作组织。",
+          "role": "final"
+        }
+      ],
+      "rationale": "制作委员会是大陆动画行业介绍中对日本联合出资制作体制的固定译名。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "一般项目也可能设制作委员会，但目标直译在非动漫组织语境仍不失真。",
+        "substringOverlaps": "会包含于 製作委員会幹事、製作委員会方式；只替换组织名，不替代后续职责或制度词。",
+        "negativeExamples": [
+          "製作委員：缺少 会，不是委员会整体。",
+          "製作委員会幹事：替换后仍需把 幹事 译为牵头方等合适表达。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "撮影監督",
+      "status": "accepted",
+      "target": "摄影监督",
+      "category": "声音与技术岗位",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "STAFF 表使用 撮影監督 标示合成摄影部门负责人。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "东京ESP",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ss26473",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧页面使用 摄影监督。",
+          "role": "final"
+        },
+        {
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中 STAFF 表使用竞争表达 摄影导演，提供正式译法对比。",
+          "role": "final"
+        }
+      ],
+      "rationale": "摄影监督是动画合成摄影职务的官方常用译名；“摄影指导”偏真人摄影体系。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "摄影指导"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "真人影视存在近似摄影负责人，但日文动画 STAFF 中指数字合成摄影部门。",
+        "substringOverlaps": "与 3DCG撮影監督 等扩展职务相邻时不能丢弃技术限定。",
+        "negativeExamples": [
+          "撮影監督補佐：只能替换主职务部分，補佐仍需翻译。",
+          "撮影：单独出现时不是摄影监督。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "音響監督",
+      "status": "accepted",
+      "target": "音响监督",
+      "category": "声音与技术岗位",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "STAFF 表将 音響監督 作为声音制作负责人职务。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "东京ESP",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ss26473",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧页面使用 音响监督。",
+          "role": "final"
+        },
+        {
+          "title": "《Paradox Live THE ANIMATION》官方网站",
+          "publisher": "Paradox Live THE ANIMATION 制作委员会",
+          "sourceType": "official-site",
+          "reference": "https://paradoxlive.jp/zh-CHS/animation/",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中 STAFF 表使用 音响监督。",
+          "role": "final"
+        }
+      ],
+      "rationale": "音响监督是授权番剧页和动画官方站一致使用的职务译名，比“音效导演”覆盖范围更准确。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "音响导演",
+          "音效导演"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "舞台、游戏也可能设置音响监督，目标在这些声音制作语境中仍准确。",
+        "substringOverlaps": "与 音響制作 是不同职务，不存在包含关系。",
+        "negativeExamples": [
+          "音響制作：不得替换为音响监督。",
+          "音響監督助手：替换后仍需翻译 助手。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "ティザーPV",
+      "status": "accepted",
+      "target": "先导PV",
+      "category": "官方宣传与版本状态",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『デスマ』ティザービジュアルとティザーPVが公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1502352834",
+          "checkedAt": "2026-07-27",
+          "summary": "标题和正文用 ティザーPV 指正式主预告前公开的先期宣传视频。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "胆大党 第二季先导PV",
+          "publisher": "哔哩哔哩番剧",
+          "sourceType": "licensed-platform",
+          "reference": "https://www.bilibili.com/bangumi/play/ep1801074",
+          "checkedAt": "2026-07-27",
+          "summary": "授权番剧资料页将动画 teaser video 标作 先导PV。",
+          "role": "final"
+        },
+        {
+          "title": "新闻 | 动画《极速车魂》官方网站",
+          "publisher": "动画《极速车魂》官方网站",
+          "sourceType": "official-site",
+          "reference": "https://mfg-anime.com/zh-CHS/news/index.php?page=3",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中站对 teaser PV 使用竞争表达 预告PV，提供正式译法对比。",
+          "role": "final"
+        }
+      ],
+      "rationale": "先导PV能区分早期 teaser 与正式主PV；“预告PV”过于宽泛。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "预告PV",
+          "概念PV"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "游戏宣传也使用 teaser PV，译作先导PV仍准确。",
+        "substringOverlaps": "会出现在 ティザーPV第2弾 等版本表达中；只替换核心词，保留版本序号。",
+        "negativeExamples": [
+          "ティザービジュアル：同为 teaser 宣传物，但不是视频。",
+          "メインPV：属于正式主宣传片，不应替换为先导PV。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    },
+    {
+      "source": "キービジュアル",
+      "status": "accepted",
+      "target": "主视觉图",
+      "category": "官方宣传与版本状态",
+      "japaneseEvidence": [
+        {
+          "title": "TVアニメ『うしろの正面カムイさん』2026年7月放送決定！ キービジュ、キャスト、キャラクターデザイン、スタッフ情報一挙公開！",
+          "publisher": "アニメイトタイムズ",
+          "sourceType": "trade-media",
+          "reference": "https://www.animatetimes.com/news/details.php?id=1777352625",
+          "checkedAt": "2026-07-27",
+          "summary": "正文反复以 キービジュアル 指作品对外发布的核心宣传视觉图。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "片桐夏向与TOYOTA86疾驰……第3弹PV及主视觉图公开！",
+          "publisher": "动画《极速车魂》官方网站",
+          "sourceType": "official-site",
+          "reference": "https://mfg-anime.com/zh-CHS/news/detail.php?id=1105274",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简中新闻使用 主视觉图。",
+          "role": "final"
+        },
+        {
+          "title": "第1弹 & 第2弹 & 第3弹 主视觉图",
+          "publisher": "NEEDY GIRL OVERDOSE 动画官方网站",
+          "sourceType": "official-site",
+          "reference": "https://needygirl-anime.com/cn/special/keyvisual/",
+          "checkedAt": "2026-07-27",
+          "summary": "动画官方简体中文站将 key visual 统一标为 主视觉图。",
+          "role": "final"
+        }
+      ],
+      "rationale": "主视觉图是作品官方简中页面的固定宣传用语；“关键视觉图”是英语 key 的机械直译。",
+      "competitionReview": {
+        "required": true,
+        "alternatives": [
+          "关键视觉图",
+          "核心视觉图"
+        ]
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "展览和品牌传播也使用 key visual，主视觉图在这些语境中仍自然。",
+        "substringOverlaps": "与 ティザービジュアル、メインビジュアル 是不同阶段或类型的视觉物料，不应互相覆盖。",
+        "negativeExamples": [
+          "キービジュ：新闻标题中的缩略写法不含完整源词，本条不会命中。",
+          "ティザービジュアル：不得替换为主视觉图。"
+        ]
+      },
+      "reviewedAt": "2026-07-27"
+    }
+  ]
+}

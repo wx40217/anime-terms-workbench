@@ -1,0 +1,43 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "テレビアニメ",
+      "target": "电视动画",
+      "status": "accepted",
+      "japaneseEvidence": [
+        {
+          "title": "搜索结果线索",
+          "publisher": "示例搜索引擎",
+          "sourceType": " Search-Result ",
+          "reference": "https://search.example/television-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "仅用于发现可能的日文行业用例。",
+          "role": "final"
+        }
+      ],
+      "chineseEvidence": [
+        {
+          "title": "测试中文资料",
+          "publisher": "示例中国动漫媒体",
+          "sourceType": "formal-media",
+          "reference": "https://example.cn/television-anime",
+          "checkedAt": "2026-07-26",
+          "summary": "测试夹具：支持简体中文用法。",
+          "role": "final"
+        }
+      ],
+      "rationale": "测试夹具：验证发现线索不能取得定稿资格。",
+      "competitionReview": {
+        "required": false,
+        "alternatives": []
+      },
+      "mismatchRiskReview": {
+        "nonAnimeMeanings": "测试夹具：已检查。",
+        "substringOverlaps": "测试夹具：已检查。",
+        "negativeExamples": []
+      },
+      "reviewedAt": "2026-07-26"
+    }
+  ]
+}

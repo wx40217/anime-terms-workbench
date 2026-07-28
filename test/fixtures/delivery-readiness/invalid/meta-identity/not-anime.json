@@ -1,0 +1,21 @@
+{
+  "id": "manga",
+  "name": "Anime",
+  "description": "Invalid metadata fixture.",
+  "author": "anime-terms-workbench",
+  "glossary": "animation",
+  "langs": [
+    "auto",
+    "zh-TW"
+  ],
+  "i18ns": {
+    "en": {
+      "name": "Anime",
+      "description": "Invalid metadata fixture."
+    }
+  },
+  "matches": [
+    "https://anime.example.jp/*",
+    "https://news.example.jp/anime/*"
+  ]
+}

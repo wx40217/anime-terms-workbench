@@ -1,0 +1,21 @@
+{
+  "glossary": "anime",
+  "records": [
+    {
+      "source": "作画",
+      "status": "candidate",
+      "japaneseEvidence": [
+        {
+          "title": "",
+          "publisher": " ",
+          "sourceType": "",
+          "reference": "",
+          "checkedAt": "2026-02-30",
+          "summary": "",
+          "role": "clue"
+        }
+      ],
+      "chineseEvidence": "not-an-array"
+    }
+  ]
+}

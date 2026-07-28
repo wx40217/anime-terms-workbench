@@ -1,0 +1,13 @@
+{
+  "id": "anime",
+  "glossary": "anime",
+  "langs": [
+    "zh-CN"
+  ],
+  "i18ns": {
+    "zh-CN": {
+      "name": "动漫",
+      "description": "缺失 matches 的无效测试夹具。"
+    }
+  }
+}
